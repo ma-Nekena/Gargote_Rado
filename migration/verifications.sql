@@ -9,3 +9,15 @@ FROM plats p
 JOIN categories c
 ON p.id_categorie = c.id
 GROUP BY c.nom;
+
+//etape 3:
+SELECT
+    commandes.id AS commande,
+    SUM(plats.prix * commande_plat.quantite) AS prix_total
+FROM plats
+JOIN commande_plat
+    ON plats.id = commande_plat.id_plat
+JOIN commandes
+    ON commandes.id = commande_plat.id_commande
+GROUP BY commandes.id
+ORDER BY commandes.id;
