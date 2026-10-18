@@ -32,3 +32,29 @@ FROM
 LEFT JOIN 
     clients cl          
     ON c.id_client = cl.id;
+
+//etape 5:
+SELECT 
+    s.nom AS serveur,
+    COUNT(DISTINCT c.id) AS nombre_commandes,
+    SUM(cp.quantite * p.prix) AS chiffre_affaires
+FROM 
+    serveurs s
+LEFT JOIN 
+    commandes c ON s.id = c.id_serveur
+LEFT JOIN 
+    commande_plat cp ON c.id = cp.id_commande
+LEFT JOIN 
+    plats p ON cp.id_plat = p.id
+GROUP BY 
+    s.id, s.nom;
+
+    INSERT INTO commandes (date, id_serveur, id_table) VALUES ('2026-10-18 12:00:00', 1, 1); 
+INSERT INTO commandes (date, id_serveur, id_table) VALUES ('2026-10-18 12:30:00', 1, NULL); 
+INSERT INTO commandes (date, id_serveur, id_table) VALUES ('2026-10-18 13:00:00', 2, 1); 
+INSERT INTO commande_plat (id_commande, id_plat, quantite) VALUES (1, 1, 2);
+
+INSERT INTO commande_plat (id_commande, id_plat, quantite) VALUES (2, 2, 1);
+
+INSERT INTO commande_plat (id_commande, id_plat, quantite) VALUES (3, 1, 1);
+INSERT INTO commande_plat (id_commande, id_plat, quantite) VALUES (3, 2, 2);
