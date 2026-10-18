@@ -7,3 +7,6 @@
 
 ## Etape 3: -Les commandes
 1- j'ai creE 2 table commande(**id_commande**, date) et commande_plat(**id**, #id_plat, #id_commande, quantite) et c'etait dans ce dernier que j'ai mis la quantite.
+
+## Etape 4: -Les habitués
+

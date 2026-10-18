@@ -21,3 +21,14 @@ JOIN commandes
     ON commandes.id = commande_plat.id_commande
 GROUP BY commandes.id
 ORDER BY commandes.id;
+
+//etape 4:
+SELECT 
+    c.id AS commande_id,
+    c.date,
+    COALESCE(cl.nom, 'client de passage') AS nom_client
+FROM 
+    commandes c         
+LEFT JOIN 
+    clients cl          
+    ON c.id_client = cl.id;
