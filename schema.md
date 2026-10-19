@@ -13,3 +13,8 @@ CLIENTS(**id_client**, nom, adresse)
 SERVEURS(**id_serveur**, nom)
 
 TABLES_SALLE(**id_table**, numero)
+
+MODE_PAIEMENT(**id**, libelle)
+
+PAIEMENTS(**id**, montant, reference_transaction, date_paiement, #id_commande, #id_mode_paiement)
+

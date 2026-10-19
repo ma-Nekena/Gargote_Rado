@@ -14,4 +14,7 @@
 ## Etape 5: -Serveurs et tables
 1- Le nom table pose un probleme en sql puisqu'il y a deja une table dans "CREATE TABLE" et quand on va creer une table nommee table, ca va etre : CREATE TABLE table... et ca va poser un probleme en sql.
 
+## Etape 6: -Les paiements
+1- une colonne montant_paye dans la table commandes ne suffit pas car une commande peut etre payE par 2 differentes mode de paiement.
+
 

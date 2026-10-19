@@ -49,3 +49,20 @@ LEFT JOIN
 GROUP BY 
     s.id, s.nom;
 
+//etape 6:
+SELECT 
+    c.id AS id_commande, 
+    c.date AS date_commande,
+    COALESCE(SUM(p.prix * cp.quantite),0) AS montant_du,
+    COALESCE(SUM(pay.montant),0) AS montant_paye,
+    (COALESCE(SUM(p.prix * cp.quantite),0)- COALESCE(SUM(pay.montant),0), 0) AS reste_a_paye
+FROM commandes c
+LEFT JOIN commande_plat cp 
+ON c.id = cp.id_commande
+LEFT JOIN plats p
+ON p.id = cp.id_plat
+LEFT JOIN paiements pay 
+ON c.id = pay.id_commande
+GROUP BY c.id, c.date
+HAVING COALESCE(SUM(p.prix * cp.quantite),0) > COALESCE(SUM(pay.montant),0);
+
