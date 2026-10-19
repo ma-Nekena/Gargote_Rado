@@ -23,4 +23,9 @@
 ## Etape 8: -Les ingredients
 1- La colonne ingredients VARCHAR(500) n'est pas conseille car stocker plusieurs valeur dans une chaine de caractere viole les regles de base de BDDR et c'est impossible de faire des calculs ou des jointures.
 
+## Etape 9: -Les menus du jour
+1- On ne cree pas une table menu separe pour eviter la complexite des commandes. Puisque le menu se commande comme un plat donc id_menu = id_plat. Et en plus, un menu n'est qu'un plat special.
+Contrainte: Puisqu'un menu est un plat composé d'autres plats (grâce à une table de composition, un peu comme les ingrédients), un risque logique apparaît : la récursivité infinie (par exemple, un menu "Maxi" qui se contient lui-même, ou un menu A qui contient le menu B qui contient le menu A).
+
+
 

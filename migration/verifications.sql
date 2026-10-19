@@ -79,3 +79,15 @@ JOIN unite u ON ip.id_unite = u.id
 WHERE DATE(c.date) = '2026-10-12'
 GROUP BY i.libelle, u.libelle;
 
+//etape 9:
+SELECT 
+    m.nom AS nom_menu,
+    m.prix AS prix_menu,
+    SUM(p.prix * cm.quantite) AS prix_a_la_carte,
+    (SUM(p.prix * cm.quantite) - m.prix) AS economie_realisee
+FROM plats m
+JOIN composition_menu cm ON m.id = cm.id_menu
+JOIN plats p ON cm.id_plats_inclu = p.id
+WHERE m.est_menu = TRUE
+GROUP BY m.id, m.nom, m.prix;
+
