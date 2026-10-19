@@ -17,4 +17,7 @@
 ## Etape 6: -Les paiements
 1- une colonne montant_paye dans la table commandes ne suffit pas car une commande peut etre payE par 2 differentes mode de paiement.
 
+## Etape 7: -Les prix changent
+1- Pour la commande 1, on constate que le prix a augmentE
+
 

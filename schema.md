@@ -6,7 +6,7 @@ CATEGORIES (**id_categorie**, nom)
 
 COMMANDES (**id_commande**, date, #id_client, #id_serveur, #id_table)
 
-COMMANDE_PLAT(**id**, #id_plat, #id_commande, quantite)
+COMMANDE_PLAT(**id**, #id_plat, #id_commande, quantite, prix_unitaire)
 
 CLIENTS(**id_client**, nom, adresse)
 
@@ -17,4 +17,7 @@ TABLES_SALLE(**id_table**, numero)
 MODE_PAIEMENT(**id**, libelle)
 
 PAIEMENTS(**id**, montant, reference_transaction, date_paiement, #id_commande, #id_mode_paiement)
+
+HISTORIQUE_PLAT(**id**, prix, date_modif, #id_plat)
+
 
