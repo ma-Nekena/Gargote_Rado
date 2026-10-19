@@ -49,12 +49,3 @@ LEFT JOIN
 GROUP BY 
     s.id, s.nom;
 
-    INSERT INTO commandes (date, id_serveur, id_table) VALUES ('2026-10-18 12:00:00', 1, 1); 
-INSERT INTO commandes (date, id_serveur, id_table) VALUES ('2026-10-18 12:30:00', 1, NULL); 
-INSERT INTO commandes (date, id_serveur, id_table) VALUES ('2026-10-18 13:00:00', 2, 1); 
-INSERT INTO commande_plat (id_commande, id_plat, quantite) VALUES (1, 1, 2);
-
-INSERT INTO commande_plat (id_commande, id_plat, quantite) VALUES (2, 2, 1);
-
-INSERT INTO commande_plat (id_commande, id_plat, quantite) VALUES (3, 1, 1);
-INSERT INTO commande_plat (id_commande, id_plat, quantite) VALUES (3, 2, 2);

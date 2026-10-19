@@ -12,5 +12,6 @@
 1- Les cles etrangeres pourrait etre null pour les cas des clients de passage. On a utilisé LEFT JOIN 
 
 ## Etape 5: -Serveurs et tables
+1- Le nom table pose un probleme en sql puisqu'il y a deja une table dans "CREATE TABLE" et quand on va creer une table nommee table, ca va etre : CREATE TABLE table... et ca va poser un probleme en sql.
 
 
