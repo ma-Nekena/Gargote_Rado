@@ -20,4 +20,14 @@ PAIEMENTS(**id**, montant, reference_transaction, date_paiement, #id_commande, #
 
 HISTORIQUE_PLAT(**id**, prix, date_modif, #id_plat)
 
+INGREDIENTS(**id**, libelle)
+
+STOCK(**id**, quantite, dernier_maj, #id_ingredient)
+
+UNITE(**id**, libelle)
+
+INGREDIENT_PLAT(**id**, quantite, #id_plat, #id_ingredient, #id_unite)
+
+
+
 

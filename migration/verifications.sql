@@ -66,3 +66,16 @@ ON c.id = pay.id_commande
 GROUP BY c.id, c.date
 HAVING COALESCE(SUM(p.prix * cp.quantite),0) > COALESCE(SUM(pay.montant),0);
 
+//etape 8:
+SELECT 
+    i.libelle AS ingredient,
+    SUM(ip.quantite * cp.quantite) AS consommation_totale,
+    u.libelle AS unite
+FROM commandes c
+JOIN commande_plat cp ON c.id = cp.id_commande
+JOIN ingredient_plat ip ON cp.id_plat = ip.id_plat
+JOIN ingredients i ON ip.id_ingredient = i.id
+JOIN unite u ON ip.id_unite = u.id
+WHERE DATE(c.date) = '2026-10-12'
+GROUP BY i.libelle, u.libelle;
+

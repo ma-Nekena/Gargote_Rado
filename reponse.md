@@ -20,4 +20,7 @@
 ## Etape 7: -Les prix changent
 1- Pour la commande 1, on constate que le prix a augmentE
 
+## Etape 8: -Les ingredients
+1- La colonne ingredients VARCHAR(500) n'est pas conseille car stocker plusieurs valeur dans une chaine de caractere viole les regles de base de BDDR et c'est impossible de faire des calculs ou des jointures.
+
 
